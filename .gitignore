@@ -1,6 +1,3 @@
-data/raw/
-data/processed/*
-!data/processed/.gitkeep
 __pycache__/
 *.pyc
 .venv/
