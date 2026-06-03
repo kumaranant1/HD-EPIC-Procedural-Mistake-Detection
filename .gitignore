@@ -1,0 +1,9 @@
+data/raw/
+data/processed/*
+!data/processed/.gitkeep
+__pycache__/
+*.pyc
+.venv/
+venv/
+todo
+codex_README.md
