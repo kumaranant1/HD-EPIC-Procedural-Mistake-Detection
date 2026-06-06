@@ -33,7 +33,7 @@ class MistakeResponse(BaseModel):
 
 client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
 
-requests_path = Path("data/processed/mistake_injection_requests.jsonl")
+requests_path = Path("prompts/mistake_injection_prompts.jsonl")
 out_path = Path("data/processed/mistake_injection_llm_outputs.jsonl")
 
 with requests_path.open(encoding="utf-8") as inp, out_path.open("w", encoding="utf-8") as out:
