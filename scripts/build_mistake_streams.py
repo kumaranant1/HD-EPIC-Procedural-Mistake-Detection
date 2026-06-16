@@ -8,7 +8,7 @@ from typing import Any
 
 DEFAULT_STREAMS = Path("data/processed/hd_epic_procedural_streams.jsonl")
 DEFAULT_RESPONSES = Path("data/processed/mistake_injection_llm_outputs.jsonl")
-DEFAULT_OUT = Path("data/processed/hd_epic_mistake_streams.jsonl")
+DEFAULT_OUT = Path("data/MistakeDetection/hd_epic_mistake_streams.jsonl")
 
 REQUIRED_RATIONALE_FIELDS = [
     "why_this_action_is_critical",
@@ -157,7 +157,7 @@ def build_mistake_stream(stream: dict[str, Any], mistake: dict[str, Any]) -> dic
     chopped_actions.append(make_mistake_action(stream, mistake))
 
     output = {key: value for key, value in stream.items() if key != "actions"}
-    output["stream_id"] = f"{stream['stream_id']}_mistake_{target_index:04d}"
+    output["stream_id"] = f"{stream['stream_id']}"
     output["source_stream_id"] = stream["stream_id"]
     output["actions"] = chopped_actions
     output["mistake_mask"] = [0] * target_index + [1]

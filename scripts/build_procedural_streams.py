@@ -1,4 +1,6 @@
-"""Convert HD-EPIC annotations into simple procedural action streams."""
+"""
+Convert HD-EPIC annotations into simple procedural action streams.
+"""
 
 from __future__ import annotations
 

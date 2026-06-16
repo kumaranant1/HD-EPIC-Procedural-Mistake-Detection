@@ -280,9 +280,6 @@ def make_prompt_jobs(args: argparse.Namespace) -> list[dict[str, Any]]:
                 "candidate_end": candidate_end,
                 "candidate_action_indices": candidate_indices,
                 "max_candidate_actions": args.max_candidate_actions,
-                "target_selection_policy": "LLM chooses one critical action from candidate_action_indices",
-                "mask_policy": "0 for original prefix actions, 1 for the replaced mistake action",
-                "cut_policy": "truncate immediately after the single changed action",
                 "prompt": build_mistake_prompt(
                     stream,
                     candidate_start=candidate_start,
